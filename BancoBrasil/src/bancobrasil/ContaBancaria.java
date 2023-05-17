@@ -1,5 +1,8 @@
 package bancobrasil;
 
+import static java.lang.String.format;
+
+
 
 public class ContaBancaria {
    // Atributos da classe(caracteristicas)
@@ -9,13 +12,23 @@ public class ContaBancaria {
     String proprietario;
     
     // Método(comportamento) da classe
-    void depositar(){}
+    void depositar(double valor){// Método com parametro
+        this.saldo += valor;
+    }
     
-    void sacar() {}
+    void sacar(double valor) {// Método com parametro
+        if (valor > saldo)
+             System.out.println("Saldo insuficiente para saque.");
+        else
+            this.saldo -= valor;
+    }
     
-    void transferir() {}
+    void transferir() {
+    }
     
-    String consultarSaldo() {
-        return "";
+    String consultarSaldo() {// Método sem parametro
+        // String.format() método da classe String para utilizar formatação
+        //com identificadores (%d, %f, %s).
+        return String.format("Seu saldo é: R$ %.2f", this.saldo);
     }    
 }

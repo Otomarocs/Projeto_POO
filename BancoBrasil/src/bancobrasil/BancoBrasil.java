@@ -9,8 +9,9 @@ public class BancoBrasil {
     public static void main(String[] args) {
       //Instanciando um objeto do tipo ContaBancaria e referenciando nas
       //variaveis contaBancaria1 e contaBancaria2;
-        ContaBancaria contaBancaria1 = new ContaBancaria();
-        ContaBancaria contaBancaria2 = new ContaBancaria();
+       ContaBancaria contaBancaria1 = new ContaBancaria();
+       ContaBancaria contaBancaria2 = new ContaBancaria();
+        
         
         /*
         Uso nas versões mais atuais da jdk
@@ -38,14 +39,19 @@ public class BancoBrasil {
         contaBancaria1.conta = scan.next();
         System.out.println("Digite o propeietario ->");
         contaBancaria1.proprietario = scan.next();
-        System.out.println("Digite o saldo da conta ->");
-        contaBancaria1.saldo = scan.nextDouble();
+        System.out.println("Digite o valor de deposito ->");
+        contaBancaria1.depositar(scan.nextDouble());
         
         System.out.println(contaBancaria1.agencia+"\n"
                 + contaBancaria1.conta + "\n"
                 + contaBancaria1.proprietario + "\n"
-                + contaBancaria1.saldo);
+                + contaBancaria1.consultarSaldo());
+        
+        System.out.println("\n\n Digite o valor do saque ->");
+        contaBancaria1.sacar(scan.nextDouble());
+        
+        System.out.println(contaBancaria1.consultarSaldo());      
             
-    }
+    }    
     
 }

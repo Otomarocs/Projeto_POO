@@ -23,7 +23,14 @@ public class ContaBancaria {
             this.saldo -= valor;
     }
     
-    void transferir() {
+    void transferir(ContaBancaria contabancaria, double valor ) {// Método com parametro
+        if(valor <= saldo){
+            this.sacar(valor);
+            contabancaria.saldo += valor            
+        }            
+        else{
+            System.out.println("Saldo Insuficiente!");
+        }        
     }
     
     String consultarSaldo() {// Método sem parametro

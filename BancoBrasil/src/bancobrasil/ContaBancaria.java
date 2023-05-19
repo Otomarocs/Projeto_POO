@@ -6,11 +6,50 @@ import static java.lang.String.format;
 
 public class ContaBancaria {
    // Atributos da classe(caracteristicas)
-    String agencia;
-    String conta;
-    double saldo;
-    Usuario proprietario;
+    private String agencia;
+    private String conta;
+    private double saldo;
+    private Usuario proprietario;
     
+    public ContaBancaria(){};
+    
+    public ContaBancaria(String agencia, String conta, double saldo, Usuario proprietario){
+        this.agencia = agencia;
+        this.conta = conta;
+        this.saldo = saldo;
+        this.proprietario = proprietario;               
+    }
+    
+    public void setagencia(String agencia){
+        this.agencia = agencia;        
+    }
+    public String getagencia(){
+        return this.agencia;
+    }
+    
+    public void setconta(String conta){
+        this.conta = conta;        
+    }
+    public String getconta(){
+        return this.conta;
+    }
+    
+    public void setsaldo(double saldo){
+        this.saldo = saldo;        
+    }
+    public double getsaldo(){
+        return this.saldo;
+    }
+    
+    public void setpropriedade(Usuario proprietario){
+        this.proprietario = proprietario;        
+    }
+    public Usuario getproprietario(){
+        return this.proprietario;
+    }
+    
+    
+        
     // Método(comportamento) da classe
     void depositar(double valor){// Método com parametro
         this.saldo += valor;
@@ -26,7 +65,7 @@ public class ContaBancaria {
     void transferir(ContaBancaria contabancaria, double valor ) {// Método com parametro
         if(valor <= saldo){
             this.sacar(valor);
-            contabancaria.saldo += valor            
+            contabancaria.saldo += valor;            
         }            
         else{
             System.out.println("Saldo Insuficiente!");
